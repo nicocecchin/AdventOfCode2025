@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-    ifstream inputFile("day01/part1/input.txt");
-    ofstream outputFile("day01/part1/output.txt");
+    ifstream inputFile("day01/part2/input.txt");
+    ofstream outputFile("day01/part2/output.txt");
     int result = 0;
     string rotation;
     int zeroCounter = 0;
@@ -17,15 +17,17 @@ int main() {
         direction = rotation[0];
         delta = stoi(rotation.erase(0,1));
         
-        if(direction == 'R'){
-            currentPos = (currentPos+delta)%100;
-        }else{
-            currentPos = (currentPos-delta)%100;
-        }
+        for(int i=0;i<delta;i++){
+            if(direction == 'R'){
+                currentPos = (currentPos + 1)%100; 
+            }else{
+                currentPos = (currentPos - 1)%100; 
+            }
 
-        if(currentPos==0){
-            zeroCounter++;
-        }
+            if(currentPos==0){
+                zeroCounter++;
+            }
+        } 
     }
 
     result = zeroCounter;
