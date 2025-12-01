@@ -1,0 +1,1 @@
+# This is the repository with the solutions of the advent of code 2025
